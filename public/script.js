@@ -51,5 +51,29 @@ const post = () => {
     });
 }
 
+//UPDATE function
+const update = () => {
+  axios.put(`/update/${DOM.idUpdate.value}`, {name: DOM.nameUpdate.value})
+    .then((response) => {
+      console.log(response);
+      get();
+    }).catch((err) => {
+      console.log(err);
+    });
+}
+
+const remove = () => {
+  axios.delete(`/delete/${DOM.idDelete.value}`)
+    .then((response) => {
+      console.log(response);
+      get();
+    }).catch((err) => {
+      console.log(err);
+    });
+}
+
+
 DOM.buttonCreate.onclick = () => post();
 DOM.GetIdButton.onclick = () => getID();
+DOM.updateButton.onclick = () => update();
+DOM.deleteButton.onclick = () => remove();
