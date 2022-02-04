@@ -61,7 +61,7 @@ const update = () => {
       console.log(err);
     });
 }
-
+ //DELETE function
 const remove = () => {
   axios.delete(`/delete/${DOM.idDelete.value}`)
     .then((response) => {
